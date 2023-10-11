@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>게임 정보 수정</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="my.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>게임 정보 수정</h2>
+
+    <div>
+        <a href='index.html' class='btn btn-primary'>Index</a>  
+        <a href='add.html' class='btn btn-info'>Add</a>
+    </div>
+
+    <form id='editForm'>
+
+        ID: 
+        <input type='text' id='id' value='1' readonly><br/>
+        게임 이름: 
+        <input type='text' id='name' value='The Witcher 3: Wild Hunt'><br/>
+        평점(10점 만점): 
+        <input type='number' id='rating' value=9.4 min=0 max=10 required><br/>
+        개발사: 
+        <input type='text' id='developer' value='CD Projekt'><br/>
+	출시년도:
+	<input type ='number', id ='year', value = '2015', min = '1950', max = new Date().getFullYear(), required></br>
+
+     </form>
+
+     <div>
+         <button onclick="confirmEdit()" class="btn btn-warning">수정</button>
+     </div>
+
+
+<script src='/path/to/your/javascript/file.js'></script> 
+
+<script type ='text/javascript'>
+function confirmEdit() {
+   if (confirm("게시물을 수정할까요?")) {
+       alert("게시물이 수정되었습니다.");
+       window.location.href = 'index.html';
+       return false;
+   }
+   return false;
+}
+</script>
+
+
+</body>
+</html>

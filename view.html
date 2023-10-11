@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>게임 정보</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="my.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>게임 정보</h2>
+
+    <div>
+        <a href='index.html' class='btn btn-primary'>Index</a>  
+        <a href='add.html' class='btn btn-info'>Add</a>
+    </div>
+
+    <table class='table'>
+        <tbody></tbody>
+     </table>
+
+     <div>
+         <a href="./edit.html" class="btn btn-warning">Edit</a>
+         <button onclick="confirmDelete()" class="btn btn-danger">Delete</button>
+     </div>
+
+<script type='text/javascript'>
+   document.addEventListener('DOMContentLoaded', function() {
+       var urlParams = new URLSearchParams(window.location.search);
+       var gameName = urlParams.get('game');
+       var gameDetails = {
+           id: '1',
+           name: 'The Witcher 3: Wild Hunt',
+           rating: '9.4',
+           developer: 'CD Projekt',
+           year: '2015'
+       };
+
+       var tableBody = document.querySelector('.table tbody');
+       
+       var row = '<tr><td>ID:</td><td>' + gameDetails.id + '</t'+'d></t'+'r>'
+                 + '<tr><td>게임 이름:</td><td>' + gameDetails.name + '</t'+'d></t'+'r>'
+                 + '<tr><td>평점(10점 만점):</td><td>' + gameDetails.rating + '</t'+'d></t'+'r>'
+                 + '<tr><td>개발사:</td><td>' + gameDetails.developer+'</t'+'d></t'+'h>'
+                 + '<tr><td>개발년도:</td><td>' + gameDetails.year+'</t'+'d></t'+'h>';
+
+        
+            tableBody.innerHTML += row;
+        
+   });
+
+   function confirmDelete() {
+      if (confirm("게시물을 삭제할까요?")) {
+          alert("게시물이 삭제되었습니다.");
+          window.location.href = 'index.html';
+          return false;
+      }
+      return false;
+   }
+</script>
+
+</body>
+</html>
